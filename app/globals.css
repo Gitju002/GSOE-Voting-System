@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Edosz";
+  src: url("../public/fonts/edosz.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+::selection {
+  background: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+input::selection {
+  color: #7c2d12;
+  background: #fc9c14;
+}
+
+body {
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgb(250, 204, 21) inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: rgb(124, 45, 18) !important;
+}
+
+#home-bg {
+  background: #b11116;
+  position: relative;
+  z-index: 0;
+}
+
+#vote-bg {
+  background: #facc15;
+  position: relative;
+  z-index: 0;
+}
+
+#vote-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../public/assets/Texture-Component-Yellow.png") repeat;
+  opacity: 0.4;
+  z-index: -1;
+  mix-blend-mode: hard-light;
+}
+
+#home-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../public/assets/Texture-BG-Red.png") repeat;
+  opacity: 0.4;
+}
+
+#fog {
+  background: url("../public/assets/Texture-Fog.png") repeat;
+  position: absolute;
+  background-size: cover;
+  top: -350px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.8;
+  transform: rotate(180deg);
+}
+
+#texture-yellow {
+  background: url("../public/assets/Texture-Component-Yellow.png") repeat;
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  mix-blend-mode: hard-light;
+}
+
+#dashed-separator {
+  height: 2px;
+}
+
+#ticketTitleText,
+#voteTitleText {
+  background: linear-gradient(180deg, #fc9c14, #7c2d12);
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 3px transparent;
+  padding: 2px;
+}
+
+#ticketComponent {
+  background: url("../public/assets/Ticket-Component.png") repeat;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  z-index: 1;
+}
+
+#ticketComponent::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 15px;
+  width: 93%;
+  height: 89%;
+  border-radius: 12px;
+  background: url("../public/assets/Texture-Component-Yellow.png") repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.6;
+  mix-blend-mode: hard-light;
+  z-index: 0;
+  pointer-events: none;
+  /* Ensures it doesn't affect interactions */
+}
+
+#grundge {
+  background: url("../public/assets/Texture-Grunge.png") repeat;
+  background-size: cover;
+}
+
+.rfm-child {
+  margin-left: 1rem;
+}
+
+.marquee-placeholder {
+  background-color: #7c2d12;
+  transform: rotate(-3deg);
+  width: 110%;
+}
+
+.swiper-slide-shadow {
+  background: none !important;
+}
+
+.swiper {
+  width: 240px;
+  height: 260px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.edosz {
+  /* font-family: var(--font-edosz-mono); */
+  font-family: "Edosz";
+}
+
+.merriWeather {
+  font-family: var(--font-merriweather);
+}
+
+/* EmbedInsta css */
+.x9f619.xjbqb8w.x78zum5.x168nmei.x13lgxp2.x5pf9jr.xo71vjh.x1p5oq8j.xxbr6pl.xwxc41k.xbbxn1n.x1n2onr6.x1plvlek.xryxfnj.x1c4vz4f.xs83m0k.x1q0g3np.xqjyukv.x6s0dn4.x1oa3qoh.x1nhvcw1 {
+  display: none !important;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 0 72% 51%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 60 9.1% 97.8%;
+    --primary-foreground: 24 9.8% 10%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 24 5.7% 82.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
